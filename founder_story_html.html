@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Built RapidPM - John Crook</title>
+    <meta name="description" content="The story behind RapidPM - how a £50m ERP rescue revealed the systemic documentation problem killing projects worldwide.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #2a2a2a;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        
+        .case-study {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .case-study h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .stats-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .cta-box h2 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .footer p {
+            color: #666;
+            font-style: italic;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .case-study, .cta-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to john.co.uk</a>
+        
+        <h1>Why I Built RapidPM</h1>
+        
+        <h2>The £50m Rescue That Made Me Realize Something Had to Change</h2>
+        
+        <p>I was brought in to rescue a failing global ERP project. Within two weeks, I escalated it to RED status.</p>
+        
+        <p>The problem wasn't the technology. It wasn't the team. It wasn't even the consultancy running it.</p>
+        
+        <p><strong>The problem was that nobody could find anything.</strong></p>
+        
+        <p>Project plan? PowerPoint slides. Requirements? Scattered across Excel files held by different people - none matching. Templates? Hundreds existed, but nobody used them. Everyone was making it up on the spot.</p>
+        
+        <p><strong>Result:</strong> A 4x estimation error (500 man-days estimated, 2,000 actually needed) and £5m overspent before I arrived.</p>
+        
+        <p>This wasn't an isolated incident. Across 25+ years managing projects for global organizations, I saw the same pattern everywhere:</p>
+        
+        <hr>
+        
+        <h2>Three Case Studies From My Career</h2>
+        
+        <div class="case-study">
+            <h3>Case Study 1: The £50m ERP Rescue - Big 4 Consultancy, No Process</h3>
+            
+            <p><strong>The Situation:</strong><br>
+            Global company. Oracle JDE implementation. 140 people across 9 countries. £50m+ budget. Run by a Big 4 consultancy. Brought in as rescue PM.</p>
+            
+            <p><strong>What I Found:</strong></p>
+            <ul>
+                <li><strong>Project plan?</strong> PowerPoint slides with milestones. No stage gates.</li>
+                <li><strong>Requirements?</strong> Four key people (Solution Architect, Programme Manager, 2 Project Managers) each had different Excel spreadsheets. None matched.</li>
+                <li><strong>Templates?</strong> They claimed none existed. When challenged, dumped hundreds of random templates from past projects. Never used any of them. Created documents on the spot.</li>
+            </ul>
+            
+            <p><strong>The 4x Estimation Error:</strong><br>
+            Consultancy estimated 500 man-days of development. After collating scattered requirements, actual: <span class="highlight">2,000 man-days</span>. Nobody had a single source of truth.</p>
+            
+            <p><strong>The Cost:</strong></p>
+            <ul>
+                <li>£750,000 underestimated on development alone</li>
+                <li>£5m (30%) project overspend before rescue</li>
+                <li>140 people × 3 hours/week wasted = 10,920 hours over 6 months = £546,000 lost</li>
+            </ul>
+            
+            <p><strong>The Fix:</strong><br>
+            Created unified product backlog, established stage gates, introduced standard templates people actually used. Successfully delivered for 3,000+ users. <span class="highlight">Saved £5m.</span></p>
+        </div>
+        
+        <div class="case-study">
+            <h3>Case Study 2: Global D365 Rollout - Even the Best Companies Waste!</h3>
+            
+            <p><strong>The Situation:</strong><br>
+            Most organized company I'd worked at. Solid PMO structure already existed. D365 implementation for multiple business units.</p>
+            
+            <p><strong>The Problems (Despite Good Structure):</strong></p>
+            <ul>
+                <li>Templates stored in multiple SharePoint sites, team sites, OneDrive folders</li>
+                <li>No version control - nobody knew which template was current</li>
+                <li>People asking "where's the latest template?" constantly</li>
+                <li>Hours per month wasted on template/version confusion, finding documents</li>
+            </ul>
+            
+            <p><strong>The Cost:</strong></p>
+            <ul>
+                <li>Core team: ~15 people</li>
+                <li>1 hour/week × 15 people = 15 hours per week wasted</li>
+                <li>At £62.50/hour = <span class="highlight">£937/week</span> lost to document confusion alone</li>
+                <li>On ONE project. At the MOST organized company.</li>
+            </ul>
+            
+            <p><strong>The Lesson:</strong><br>
+            If the best-run company with solid PMO still loses £1k per week on project documentation logistics, what's happening at average companies?</p>
+        </div>
+        
+        <div class="case-study">
+            <h3>Case Study 3: Finance ERP - £7,500 Lost Creating One Document</h3>
+            
+            <p><strong>The Situation:</strong><br>
+            UK company deploying finance ERP system. Project manager needed to create project charter.</p>
+            
+            <p><strong>The Problem:</strong></p>
+            <ul>
+                <li>No standard templates available</li>
+                <li>PM Googled templates online</li>
+                <li>Found multiple different versions, by multiple methodologies</li>
+                <li>Spent 3 weeks (120 hours) cobbling together their own versions and filling it in</li>
+            </ul>
+            
+            <p><strong>The Cost:</strong></p>
+            <ul>
+                <li>120 hours at £500/day = <span class="highlight">£7,500 wasted</span> on just creating a subset of suitable templates that stakeholders could approve</li>
+                <li>Loss of credibility</li>
+            </ul>
+            
+            <p><strong>The Pattern:</strong><br>
+            This happens on EVERY project. PMs waste days recreating templates that should be standardized, and should all work together as a coherent methodology so that there are no gaps or confusing overlap. Then wonder why projects fail.</p>
+        </div>
+        
+        <hr>
+        
+        <h2>The Research Backs This Up</h2>
+        
+        <p>This isn't just my experience. The numbers are staggering:</p>
+        
+        <h3>Time Wasted Searching for Information</h3>
+        <ul>
+            <li><strong>1.8 hours every day</strong> (9.3 hours per week) spent searching and gathering information <em>(McKinsey)</em></li>
+            <li><strong>19.8% of business time</strong> - one full day per week - wasted searching for information <em>(Interact)</em></li>
+            <li><strong>30% of the workday</strong> spent searching for information <em>(IDC)</em></li>
+            <li>Workers take up to <strong>8 searches</strong> to find the right document <em>(SearchYourCloud)</em></li>
+            <li><strong>48% of employees</strong> regularly struggle to find documents they need <em>(Adobe)</em></li>
+        </ul>
+        
+        <h3>Financial Impact</h3>
+        <ul>
+            <li>An enterprise employing 1,000 knowledge workers <strong>wastes $2.5 million per year</strong> due to inability to locate information</li>
+            <li>The typical manager <strong>wastes 150 hours per year</strong> (nearly a month) searching for lost information <em>(Forbes ASAP)</em></li>
+            <li>Put another way: <strong>businesses hire 5 employees but only 4 show up to work</strong>; the fifth is off searching for answers <em>(McKinsey)</em></li>
+        </ul>
+        
+        <h3>Project Failure Due to Poor Documentation</h3>
+        <ul>
+            <li>For every $1 billion invested, <strong>$122 million is wasted</strong> due to poor project performance <em>(PMI)</em></li>
+            <li><strong>70% of projects globally fail</strong></li>
+            <li><strong>37% of project failures</strong> are due to lack of clear goals <em>(PMI)</em></li>
+            <li><strong>59% fail</strong> due to poor requirements management <em>(PMI)</em></li>
+            <li><strong>47% of projects fail</strong> to meet their goals due to poor management of requirements <em>(PMI)</em></li>
+            <li><strong>80% of organizations</strong> spend at least half their time on rework <em>(Geneca)</em></li>
+        </ul>
+        
+        <div class="stats-box">
+            <p><strong>The Bottom Line:</strong><br>
+            Companies are hemorrhaging money and time because documents - the foundation of every project - are treated as afterthoughts.</p>
+        </div>
+        
+        <hr>
+        
+        <h2>Why Existing Tools Don't Solve This</h2>
+        
+        <p>I tried Monday.com. Asana. Jira. Notion. ClickUp.</p>
+        
+        <p>They're all task management tools with document attachments bolted on.</p>
+        
+        <p><strong>They treat documents as afterthoughts.</strong></p>
+        
+        <p>But here's the reality: <strong>Projects succeed or fail based on the quality of your information.</strong></p>
+        
+        <p>You can have the best task list in the world, but if:</p>
+        <ul>
+            <li>Your business case is weak → No budget approval</li>
+            <li>Your risk register is missing → Surprises kill you</li>
+            <li>Your technical specs are unclear → Development builds the wrong thing</li>
+            <li>Your project charter is incomplete → Stakeholders disengage</li>
+            <li>Your requirements are scattered → You get 4x estimation errors</li>
+        </ul>
+        
+        <p><strong>The task management is the easy part. The documentation is what matters.</strong></p>
+        
+        <hr>
+        
+        <h2>What I Built</h2>
+        
+        <p>RapidPM puts documents first:</p>
+        
+        <p><strong>Instead of "here's your task list, attach some docs"</strong><br>
+        → It's "here's your complete documentation framework, now let's execute"</p>
+        
+        <p><strong>Instead of "Google for templates and recreate them"</strong><br>
+        → It's "here are 171 professional templates, pick what you need, AI customizes for your project"</p>
+        
+        <p><strong>Instead of "where's the latest version?"</strong><br>
+        → It's "everything organized in hierarchies that actually make sense"</p>
+        
+        <p><strong>Instead of "spend 3 weeks creating a project charter"</strong><br>
+        → It's "generate a complete, methodology-compliant charter in 30 minutes"</p>
+        
+        <hr>
+        
+        <h2>How RapidPM Works</h2>
+        
+        <p><strong>Define your deliverables first.</strong> Break those deliverables down into a PBS or WBS. Map your dependencies. Then create your plan.</p>
+        
+        <p>That's the project management best practice approach. That's what RapidPM enables.</p>
+        
+        <h3>Three ways to use it:</h3>
+        <ol>
+            <li><strong>Full methodology approach:</strong> Create your project, choose your methodology (PRINCE2, Agile, Waterfall, Lean, Critical Chain), and download the complete suite of best-practice templates.</li>
+            <li><strong>Mix and match:</strong> Pick and choose documents and templates from all methodologies to suit your specific needs.</li>
+            <li><strong>Build your own:</strong> Copy and adapt templates to create your own company standards, then use these across your entire organization.</li>
+        </ol>
+        
+        <hr>
+        
+        <h2>The Time Savings Are Real</h2>
+        
+        <h3>Traditional approach:</h3>
+        <ul>
+            <li>Project charter creation: 120 hours</li>
+            <li>Risk register setup: 16 hours</li>
+            <li>Requirements specification: 40 hours</li>
+            <li>Searching for documents daily: 1.8 hours/day</li>
+            <li>Template/version confusion: 2 hours/week</li>
+            <li><strong>Total: 200+ hours per project on documentation logistics</strong></li>
+        </ul>
+        
+        <h3>RapidPM approach:</h3>
+        <ul>
+            <li>Select templates: 30 minutes</li>
+            <li>AI generates project-specific content: 2 hours</li>
+            <li>Customize for your project: 4 hours</li>
+            <li>Organized search and retrieval: 0.2 hours/day</li>
+            <li><strong>Total: ~7 hours per project on documentation</strong></li>
+        </ul>
+        
+        <p><span class="highlight"><strong>That's a 96% reduction in time wasted on documentation chaos.</strong></span></p>
+        
+        <p>For a team of 15 people on a 6-month project, that's approximately <strong>£150,000 in reclaimed productivity</strong> (assuming average hourly rates of £50).</p>
+        
+        <hr>
+        
+        <h2>Current Status</h2>
+        <ul>
+            <li>🚀 <strong>Beta launch:</strong> October 2025</li>
+            <li>📝 <strong>50+ templates ready now</strong>, 200+ more coming Q1 2025</li>
+            <li>💻 <strong>Technical architecture:</strong> Flask/Angular/AWS, designed for 500K+ projects</li>
+            <li>🤖 <strong>AI document generation:</strong> Coming soon</li>
+            <li>🔧 <strong>Integrations:</strong> OnlyOffice (collaborative editing), Syncfusion (Gantt charts)</li>
+            <li>📊 <strong>Version control:</strong> Coming Q1 2025</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>Who It's For</h2>
+        
+        <p><strong>Software development teams</strong> drowning in PRDs, TRDs, API specs scattered across Confluence, Notion, and Slack threads.</p>
+        
+        <p><strong>Project managers</strong> who spend more time answering "where is..." questions than actually managing projects.</p>
+        
+        <p><strong>Consultancies</strong> recreating client deliverables from scratch every single engagement.</p>
+        
+        <p><strong>Anyone who's ever experienced:</strong></p>
+        <ul>
+            <li>A 4x estimation error due to scattered requirements</li>
+            <li>Months of project delays due to unclear documentation</li>
+            <li>Thousands of pounds lost on recreating templates from scratch</li>
+            <li>Team members spending 30% of their day searching for information</li>
+            <li>A £50m project going RED because nobody had a single source of truth</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>What I'm NOT Building</h2>
+        
+        <p>This isn't another Asana clone with AI buzzwords slapped on.</p>
+        
+        <p>I'm not trying to be everything to everyone.</p>
+        
+        <p><strong>I'm solving one problem extremely well: Document chaos in project management.</strong></p>
+        
+        <p>If your biggest pain is Gantt chart visualization, use Microsoft Project.</p>
+        
+        <p>If your biggest pain is team chat, use Slack.</p>
+        
+        <p>But if your biggest pain is:</p>
+        <ul>
+            <li>Wasting days hunting for specs</li>
+            <li>Recreating templates from scratch</li>
+            <li>4x estimation errors due to scattered requirements</li>
+            <li>Watching your team spend 1.8 hours every day searching for information</li>
+            <li>Losing £250,000 per project on documentation logistics</li>
+        </ul>
+        
+        <p><strong>That's what I built RapidPM to fix.</strong></p>
+        
+        <div class="cta-box">
+            <h2>Try It</h2>
+            <p>Beta access is free. 38 spots left (limiting to 50 during beta).</p>
+            
+            <p><strong>Early users get:</strong></p>
+            <ul style="text-align: left; display: inline-block; margin: 20px auto;">
+                <li>Lifetime 50% discount when we launch Q2 2025</li>
+                <li>Direct access to me (email, monthly calls)</li>
+                <li>Input on which templates get built next</li>
+                <li>Feature request priority</li>
+            </ul>
+            
+            <a href="https://rapidpm.uk/beta" class="cta-button">Get Beta Access →</a>
+            
+            <p style="margin-top: 20px; font-size: 0.9em;">No credit card. No pressure. Just trying to solve a problem I've watched kill too many good projects and waste too much money.</p>
+            
+            <p><strong>If you're tired of losing 1.8 hours every day searching for documents, this is for you.</strong></p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>John Crook</strong><br>
+            Founder & Lead Architect, RapidPM<br>
+            <em>Former rescue PM who got tired of fixing the same problem on every project</em><br>
+            📧 john@rapidpm.uk</p>
+            
+            <a href="/" class="back-link" style="margin-top: 20px; display: inline-block;">← Back to john.co.uk</a>
+        </div>
+    </div>
+</body>
+</html>
