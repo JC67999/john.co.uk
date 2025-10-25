@@ -24,24 +24,15 @@
             padding: 60px 20px;
         }
         
-        .header {
-            margin-bottom: 40px;
-        }
-        
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-        
-        .tagline {
-            font-size: 1.3em;
-            color: #666;
+            font-size: 2em;
             margin-bottom: 30px;
+            color: #1a1a1a;
+            font-weight: 500;
         }
         
         .intro {
-            font-size: 1.1em;
+            font-size: 1.2em;
             line-height: 1.8;
             margin-bottom: 40px;
         }
@@ -66,28 +57,22 @@
             opacity: 0.95;
         }
         
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+        .features {
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        .features li {
+            margin-bottom: 8px;
+        }
+        
+        .coming-soon {
+            font-size: 0.95em;
             margin-bottom: 25px;
-        }
-        
-        .stat {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 15px;
-            border-radius: 8px;
-        }
-        
-        .stat-number {
-            font-size: 1.5em;
-            font-weight: bold;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 0.9em;
             opacity: 0.9;
+            font-style: italic;
         }
         
         .cta-button {
@@ -110,12 +95,6 @@
             margin-top: 50px;
         }
         
-        .links h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-        
         .link-list {
             list-style: none;
         }
@@ -128,72 +107,43 @@
             color: #667eea;
             text-decoration: none;
             font-size: 1.1em;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
         }
         
         .link-list a:hover {
-            border-bottom-color: #667eea;
-        }
-        
-        .footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            color: #999;
-            font-size: 0.9em;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Hi, I'm John Crook</h1>
-            <p class="tagline">Building tools that fix what's broken in project management.</p>
-        </div>
+        <h1>Hi, I'm John Crook</h1>
         
         <div class="intro">
-            <p>I've spent years watching good projects fail. Not because of bad teams or unclear goals, but because of <strong>documentation chaos</strong>.</p>
+            <p>I've spent decades working on projects, frustrated by the waste caused by poor documentation, processes, and planning.</p>
             
-            <p>Teams waste 1.8 hours every day searching for documents. Project managers spend weeks recreating templates that should be standardized. Companies lose millions on projects that fail because nobody can find the current version of the requirements.</p>
-            
-            <p>So I built RapidPM to fix it.</p>
+            <p>So I decided to do something about it and built RapidPM.</p>
         </div>
         
         <div class="project-box">
             <h2>🚀 RapidPM</h2>
-            <p>Instant access to 50+ professional project templates (200+ coming Q1). AI document generation. Everything organized so teams can actually find what they need.</p>
+            <p>Project management that actually keeps your documents organized and connected to your plan.</p>
             
-            <div class="stats">
-                <div class="stat">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Templates ready</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">Beta</span>
-                    <span class="stat-label">Oct 2025</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">38</span>
-                    <span class="stat-label">Spots left</span>
-                </div>
-            </div>
+            <ul class="features">
+                <li>Hundreds of professional templates, all in methodology suites</li>
+                <li>Automatic categorization based on your methodology</li>
+                <li>Documents link directly to your planning</li>
+                <li>Built-in document editing and planning tools</li>
+            </ul>
             
-            <a href="https://rapidpm.uk/beta" class="cta-button">Try RapidPM Beta (Free)</a>
+            <p class="coming-soon">Coming soon: Full planning functionality with task optimization</p>
+            
+            <a href="https://rapidpm.uk/beta" class="cta-button">Join the Beta (Free)</a>
         </div>
         
         <div class="links">
-            <h3>More</h3>
             <ul class="link-list">
-                <li><a href="/story">→ Why I built this (the full story)</a></li>
-                <li><a href="mailto:john@rapidpm.uk">→ Email me</a></li>
-                <li><a href="https://www.linkedin.com/in/johncrook" target="_blank">→ LinkedIn</a></li>
+                <li><a href="mailto:john@rapidpm.uk" target="_blank">→ Email me</a></li>
             </ul>
-        </div>
-        
-        <div class="footer">
-            <p>Also at: crook.co.uk • velastra.co.uk</p>
         </div>
     </div>
 </body>
